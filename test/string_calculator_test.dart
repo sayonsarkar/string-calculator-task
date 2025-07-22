@@ -25,4 +25,8 @@ void main() {
   test('custom delimiter returns their sum', () {
     expect(add('//;\n1;2'), 3);
   });
+
+  test('negative number throws exception', () {
+    expect(() => add('-1,2'), throwsException);
+  });
 }
