@@ -13,4 +13,8 @@ void main() {
   test('two numbers separated by comma returns their sum', () {
     expect(add('1,2'), 3);
   });
+
+  test('multiple numbers separated by comma returns their sum', () {
+    expect(add('1,2,3,4,5'), 15);
+  });
 }
