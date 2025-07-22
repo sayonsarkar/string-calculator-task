@@ -3,7 +3,9 @@ int add(String numbers) {
     return 0;
   }
 
-  List<String> parts = numbers.split(',');
+  // Replace newlines with commas to handle both delimiters
+  String normalizedNumbers = numbers.replaceAll('\n', ',');
+  List<String> parts = normalizedNumbers.split(',');
   int sum = 0;
   for (String part in parts) {
     sum += int.parse(part);
