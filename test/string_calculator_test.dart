@@ -29,4 +29,11 @@ void main() {
   test('negative number throws exception', () {
     expect(() => add('-1,2'), throwsException);
   });
+
+  test('multiple negative numbers shows all in exception message', () {
+    expect(
+        () => add('-1,2,-3'),
+        throwsA(predicate((e) =>
+            e.toString().contains('-1') && e.toString().contains('-3'))));
+  });
 }
