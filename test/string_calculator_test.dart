@@ -5,4 +5,8 @@ void main() {
   test('empty string returns 0', () {
     expect(add(''), 0);
   });
+
+  test('single number returns the number itself', () {
+    expect(add('1'), 1);
+  });
 }
