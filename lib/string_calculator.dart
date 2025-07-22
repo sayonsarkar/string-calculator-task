@@ -21,7 +21,11 @@ int add(String numbers) {
   int sum = 0;
   for (String part in parts) {
     if (part.isNotEmpty) {
-      sum += int.parse(part);
+      int number = int.parse(part);
+      if (number < 0) {
+        throw Exception('negative numbers not allowed $number');
+      }
+      sum += number;
     }
   }
   return sum;
