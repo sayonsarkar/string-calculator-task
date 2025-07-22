@@ -18,15 +18,25 @@ int add(String numbers) {
   // Replace newlines with the delimiter to handle both delimiters
   String normalizedNumbers = numbersToProcess.replaceAll('\n', delimiter);
   List<String> parts = normalizedNumbers.split(delimiter);
+
+  List<int> negativeNumbers = [];
   int sum = 0;
+
   for (String part in parts) {
     if (part.isNotEmpty) {
       int number = int.parse(part);
       if (number < 0) {
-        throw Exception('negative numbers not allowed $number');
+        negativeNumbers.add(number);
+      } else {
+        sum += number;
       }
-      sum += number;
     }
   }
+
+  if (negativeNumbers.isNotEmpty) {
+    String negativeList = negativeNumbers.join(',');
+    throw Exception('negative numbers not allowed $negativeList');
+  }
+
   return sum;
 }
