@@ -9,4 +9,8 @@ void main() {
   test('single number returns the number itself', () {
     expect(add('1'), 1);
   });
+
+  test('two numbers separated by comma returns their sum', () {
+    expect(add('1,2'), 3);
+  });
 }
