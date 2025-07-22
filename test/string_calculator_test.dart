@@ -21,4 +21,8 @@ void main() {
   test('numbers separated by newlines returns their sum', () {
     expect(add('1\n2,3'), 6);
   });
+
+  test('custom delimiter returns their sum', () {
+    expect(add('//;\n1;2'), 3);
+  });
 }
